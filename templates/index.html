@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href= "{{ url_for('static',filename='style.css') }}">
+    <title>Counter</title>
+</head>
+<body>
+    <h1>Counter</h1>
+    <p>{{session['count']}} time(s)</p>
+
+    <div id="buttons">
+        <a href="/increment" id="btn1">Add 2</a>
+        <a href="/reset" id="btn2">Reset</a>
+    </div>
+    <div id='sensei'>
+        <form action="/sensei" method="post">
+            <label for='numb' id="label">Play with it</label>
+            <input type="number" name='numb'>
+            <input type="submit">
+        </form>
+        
+        <table>
+            <thead>
+                <th>Real refreshes</th>
+                <th>User input</th>
+            </thead>
+            <tbody>
+                <td>{{session['count']}}</td>
+                <td>{{session['numb']}}</td>
+            </tbody>
+        </table>
+        
+    </div>
+</body>
+</html>
